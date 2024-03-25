@@ -3,8 +3,6 @@ public class Solution {
         HashSet<int> result = new HashSet<int>(nums);
 
         result.CopyTo(nums);
-
-        GC.Collect();
         
         return result.Count;
     }
