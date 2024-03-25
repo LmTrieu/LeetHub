@@ -1,14 +1,11 @@
 public class Solution {
     public int RemoveDuplicates(int[] nums) {
-        int index = 1;
-        for (int i = 1; i < nums.Length; i++)
-        {
-            if(nums[i] != nums[i-1])
-            {
-                nums[index] = nums[i];
-                index ++;
-            }
-        }
-        return index;
+        HashSet<int> result = new HashSet<int>(nums);
+
+        result.CopyTo(nums);
+
+        GC.Collect();
+        
+        return result.Count;
     }
 }
